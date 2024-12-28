@@ -1,3 +1,5 @@
 # Commands
 
-1 - npm i
+npm i
+npm install @reduxjs/toolkit react-redux
+npm i react-hook-form
