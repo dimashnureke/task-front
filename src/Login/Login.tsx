@@ -1,14 +1,29 @@
-import { useForm, type FieldValues } from 'react-hook-form'
+import { useForm} from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux';
+import { onLine } from '../app/features/autherizedSlice';
 import './Login.css'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const {register, handleSubmit, reset, formState:{errors}} = useForm();
+    interface FormData {
+        username:string,
+        password:string,
+    }
 
-    const onSubmit = (data:FieldValues) => {
-        console.log(data)
-        console.log(data.username)
+    const count = useSelector((state:any) => state.isOnline.value)
+    const dispatch = useDispatch();
+    const {register, handleSubmit, reset, formState:{errors}} = useForm<FormData>();
+    const navigate = useNavigate();
+
+    const onSubmit = (data:FormData) => {
+        console.log(data);
+        (data.username==="admin"&&data.password==="password") ?
+        (dispatch(onLine()),navigate('/characters')) : alert('Incorrect credentials')
         reset()
     }
+
+    
+
   return (
     <div>
         <form onSubmit={handleSubmit(onSubmit)} className='login-form'>

@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { autherizedSlice } from "./features/autherizedSlice";
+import  autherizedSlice  from "./features/autherizedSlice";
 
 export const store = configureStore({
     reducer:{
-        counter:autherizedSlice,
+        isOnline:autherizedSlice,
     }
 })

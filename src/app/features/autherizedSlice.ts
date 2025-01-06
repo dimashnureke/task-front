@@ -1,21 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    count: 0
+    value: false
 }
 
 export const autherizedSlice = createSlice({
-    name:"counter",
+    name:'isOnline',
     initialState,
     reducers:{
-        increment: (state) => {
-            state.count += 1;
+        onLine: (state) => {
+            state.value = true;
         },
-        decrement: (state) => {
-            state.count -= 1;
+        offLine: (state) => {
+            state.value = false;
         }
     }
 })
 
-export const {increment, decrement} = autherizedSlice.actions
+export const {onLine, offLine} = autherizedSlice.actions
 export default autherizedSlice.reducer;

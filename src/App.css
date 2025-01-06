@@ -1,10 +1,46 @@
 *{
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 .main-page{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.link{
+  text-decoration: none;
+  color: #111;
+}
+.card-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.Card{
+  width: 20rem;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.Card:hover{
+  background-color: aliceblue;
+}
+.Card-detailed{
+  width: 40rem;
+  font-size: 1.5rem;
+  background-color: #f2f2f2;
+}
+.page-container{
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+.card-container-big{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
